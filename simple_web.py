@@ -21,6 +21,7 @@ def signin_form():
             <p><input type='submit'></input></p>
         </form>
     '''
+
 @app.route('/signin',methods=['POST'])
 def signin():
     if request.form['username'] == 'admin' and request.form['password'] == 'password':
