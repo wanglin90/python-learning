@@ -11,7 +11,6 @@ def _range_check(arr, low, high):
 
 
 def quick_sort(arr, low, high):
-
     _range_check(arr, low, high)
 
     if low < high:
@@ -38,9 +37,14 @@ def quick_sort(arr, low, high):
         quick_sort(arr, i + 1, high)
 
 
+def bubble_sort(arr):
+    for i in range(len(arr))[::-1]: # from tail to header
+        for j in range(i): # compare current with next from header to i
+            if arr[j] > arr[j+1]:
+                arr[j],arr[j+1] = arr[j+1],arr[j]
+    return arr
+
 if __name__ == '__main__':
-    arr = [23, 2, 234, 12, 3] # 1 --> [3,2,234,12,] 2--> [3,2,,12,234] 3 --> [3,2,23,12,243] 4 --> quick_sort[3,2] quick_sort[12,243]
-    quick_sort(arr, 0, len(arr) - 1)
-    print list(arr)
-
-
+    arr = [23,2,243,12,3]
+    bubble_sort(arr)
+    print arr
