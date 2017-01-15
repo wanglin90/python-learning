@@ -1,6 +1,7 @@
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
 
+
 def _range_check(arr, low, high):
     if low > high:
         raise OverflowError('low(%s) > high(%s)' % (low, high))
