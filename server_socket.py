@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import socket
-import threading
+import threading_demo
 
 
 def handler(sock, addr):
@@ -27,5 +27,5 @@ while True:
     # 接受一个新连接
     sock, addr = server.accept()
     # 创建新线程来处理
-    t = threading.Thread(target=handler, args=(sock, addr))
+    t = threading_demo.Thread(target=handler, args=(sock, addr))
     t.start()
